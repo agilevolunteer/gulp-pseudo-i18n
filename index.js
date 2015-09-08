@@ -10,9 +10,9 @@ var pseudoTranslator = require('./lib/pseudo');
 var pluginName = require('./package.json').name;
 
 module.exports = function (options) {
-  options = _.extend({}, options, {
+  options = _.extend({}, {
     language: 'qps-ploc'
-  });
+  }, options);
 
   return through.obj(function (file, enc, cb) {
     if (file.isNull()) {
